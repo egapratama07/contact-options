@@ -10,10 +10,18 @@
 
 body{
     font-family:'Segoe UI',sans-serif;
-    background: radial-gradient(circle at top,#0b2a4a,#020617 70%);
+    background: linear-gradient(270deg,#020617,#0b2a4a,#020617);
+    background-size:600% 600%;
+    animation:bgMove 12s ease infinite;
     color:white;
     display:flex;
     justify-content:center;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .wrapper{
@@ -32,13 +40,18 @@ body{
     width:120px;height:120px;border-radius:50%;
     border:4px solid rgba(59,130,246,.6);
     object-fit:cover;
-    box-shadow:0 0 25px rgba(59,130,246,.5);
+    box-shadow:0 0 30px rgba(59,130,246,.8);
+    animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{box-shadow:0 0 20px rgba(59,130,246,.6)}
+    50%{box-shadow:0 0 40px rgba(59,130,246,1)}
 }
 
 .profile h1{
     margin-top:15px;
     font-size:26px;
-    letter-spacing:.5px;
 }
 
 .divider{
@@ -60,19 +73,32 @@ body{
     color:white;
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,.5);
     transition:.3s ease;
 }
 
-.card:hover{
-    transform:translateY(-4px) scale(1.02);
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
+    transition:.5s;
 }
 
-/* Glow hover */
-.whatsapp:hover{box-shadow:0 0 20px #25D366}
-.email:hover{box-shadow:0 0 20px #0078D4}
-.linkedin:hover{box-shadow:0 0 20px #0A66C2}
+.card:hover::before{
+    left:100%;
+}
+
+.card:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* Glow */
+.whatsapp:hover{box-shadow:0 0 25px #25D366}
+.email:hover{box-shadow:0 0 25px #0078D4}
+.linkedin:hover{box-shadow:0 0 25px #0A66C2}
 
 .left{display:flex;align-items:center;gap:14px}
 
@@ -84,19 +110,15 @@ body{
 
 .icon img{width:24px}
 
-/* Brand backgrounds */
 .whatsapp .icon{background:linear-gradient(135deg,#16a34a,#22c55e)}
 .email .icon{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
 .linkedin .icon{background:linear-gradient(135deg,#0A66C2,#1d4ed8)}
 
 .text{text-align:left}
 .text b{display:block;font-size:15px}
-.text span{font-size:13px;opacity:.7}
+.text span{font-size:13px;opacity:.8}
 
-.arrow{
-    font-size:20px;
-    opacity:.4;
-}
+.arrow{font-size:20px;opacity:.5}
 
 /* Ripple */
 .ripple{
@@ -111,19 +133,16 @@ body{
     to{transform:scale(4);opacity:0}
 }
 
-/* Animations */
+/* Animation */
+.card{opacity:0;transform:translateY(20px)}
+.card:nth-child(2){animation:fadeUp .5s ease forwards .2s}
+.card:nth-child(3){animation:fadeUp .5s ease forwards .4s}
+.card:nth-child(4){animation:fadeUp .5s ease forwards .6s}
+
 @keyframes fadeDown{
     from{opacity:0;transform:translateY(-20px)}
     to{opacity:1;transform:translateY(0)}
 }
-
-.card{
-    opacity:0;
-    transform:translateY(20px);
-}
-.card:nth-child(2){animation:fadeUp .5s ease forwards .2s}
-.card:nth-child(3){animation:fadeUp .5s ease forwards .4s}
-.card:nth-child(4){animation:fadeUp .5s ease forwards .6s}
 
 @keyframes fadeUp{
     to{opacity:1;transform:translateY(0)}
@@ -169,7 +188,7 @@ footer{
 <div class="icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png"></div>
 <div class="text">
 <b>Email (Outlook)</b>
-<span>pratama.ega@outlook.com</span>
+<span>Ega Pratama</span>
 </div>
 </div>
 <div class="arrow">›</div>
@@ -180,7 +199,7 @@ footer{
 <div class="icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"></div>
 <div class="text">
 <b>LinkedIn</b>
-<span>linkedin.com/in/ega-pratama-876841366/</span>
+<span>Ega Pratama</span>
 </div>
 </div>
 <div class="arrow">›</div>
