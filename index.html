@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilih Opsi Kontak</title>
+    <title>Contact Person</title>
     <style>
         body {
             background-color: white; /* Latar belakang halaman putih */
@@ -19,29 +19,32 @@
         .container {
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Mengatur sejajar di atas */
+            align-items: center; /* Mengatur sejajar di tengah */
             flex-direction: column;
             margin-top: 50px;
         }
         .box {
+            display: flex;
+            align-items: center; /* Menyelaraskan logo dan teks secara horizontal */
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 10px; /* Jarak antar kotak */
-            background-color: #f9f9f9;
+            width: 300px; /* Lebar kotak */
+            color: white; /* Teks berwarna putih */
         }
         .whatsapp {
-            border: 2px solid #25D366; /* Border warna hijau WhatsApp */
+            background-color: #25D366; /* Latar belakang warna hijau WhatsApp */
         }
         .outlook {
-            border: 2px solid #0078D4; /* Border warna biru Outlook */
+            background-color: #0078D4; /* Latar belakang warna biru Outlook */
         }
         .icon {
-            margin: 10px 0; /* Jarak atas dan bawah untuk ikon */
+            margin-right: 10px; /* Jarak antara logo dan teks */
         }
         img {
-            width: 80px; /* Ukuran gambar logo */
+            width: 50px; /* Ukuran gambar logo */
             height: auto;
         }
     </style>
@@ -65,7 +68,7 @@
     <div class="box outlook">
         <div class="icon">
             <a href="mailto:pratama.ega@outlook.com">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Outlook.com_logo.svg" alt="Outlook">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Outlook.com_logo.svg" alt="Outlook">
             </a>
         </div>
         <h2>Outlook</h2>
