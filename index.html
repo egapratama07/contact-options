@@ -1,78 +1,144 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Person</title>
-    <style>
-        body {
-            background-color: white; /* Latar belakang halaman putih */
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-        header {
-            background-color: #007B7F; /* Warna biru laut untuk header */
-            padding: 20px;
-            text-align: center;
-            color: white; /* Warna teks putih untuk kontras */
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Mengatur sejajar di tengah */
-            flex-direction: column;
-            margin-top: 50px;
-        }
-        .box {
-            display: flex;
-            align-items: center; /* Menyelaraskan logo dan teks secara horizontal */
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px; /* Jarak antar kotak */
-            width: 300px; /* Lebar kotak */
-            color: white; /* Teks berwarna putih */
-        }
-        .whatsapp {
-            background-color: #25D366; /* Latar belakang warna hijau WhatsApp */
-        }
-        .outlook {
-            background-color: #0078D4; /* Latar belakang warna biru Outlook */
-        }
-        .icon {
-            margin-right: 10px; /* Jarak antara logo dan teks */
-        }
-        img {
-            width: 50px; /* Ukuran gambar logo */
-            height: auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Bio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.profile {
+    margin-bottom: 30px;
+    animation: fadeDown 1s ease;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 15px;
+}
+
+.profile h1 {
+    font-size: 22px;
+}
+
+.profile p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    animation: fadeUp 0.8s ease;
+}
+
+.link:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.2);
+}
+
+.link img {
+    width: 24px;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-20px);} 
+    to {opacity: 1; transform: translateY(0);} 
+}
+
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(20px);} 
+    to {opacity: 1; transform: translateY(0);} 
+}
+
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>CONTACT PERSON</h1>
-</header>
+<div class="wrapper">
 
-<div class="container">
-    <div class="box whatsapp">
-        <div class="icon">
-            <a href="https://wa.me/6285811108994" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            </a>
-        </div>
-        <h2>WhatsApp</h2>
+    <div class="profile">
+        <img src="https://i.pravatar.cc/150" alt="profile">
+        <h1>Ega Pratama</h1>
+        <p>Hubungi saya melalui platform berikut</p>
     </div>
 
-    <div class="box outlook">
-        <div class="icon">
-            <a href="mailto:pratama.ega@outlook.com">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Outlook.com_logo.svg" alt="Outlook">
-            </a>
-        </div>
-        <h2>Outlook</h2>
+    <div class="links">
+
+        <a class="link" href="https://wa.me/6285811108994" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+            WhatsApp
+        </a>
+
+        <a class="link" href="mailto:pratama.ega@outlook.com">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Outlook.com_logo.svg">
+            Email
+        </a>
+
+        <a class="link" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+            Instagram
+        </a>
+
+        <a class="link" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+            WhatsApp Business
+        </a>
+
     </div>
+
+    <footer>
+        © 2026 - Link Bio
+    </footer>
+
 </div>
 
 </body>
